@@ -1,8 +1,8 @@
 # 1000-LIST-NICK (IT)
 Вы открыли 1-ый этап!
 
- - [1 этап](https://github.com/jag-k/1000listnick-it/tree/first-stage)
- - [2 этап](https://github.com/jag-k/1000listnick-it/tree/second-stage)
+ - [1 этап](https://github.com/jag-k/1000listnick-it/tree/first-step)
+ - [2 этап](https://github.com/jag-k/1000listnick-it/tree/second-step)
 
 ### Как запустить проект? 
 1. Для начала, должен быть установлен [`python`⬀](https://www.python.org/downloads/) версии не ниже `3.4` и [` git`⬀](https://git-scm.com/downloads)
