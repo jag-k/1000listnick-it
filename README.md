@@ -5,10 +5,10 @@
  - [2 этап](https://github.com/jag-k/1000listnick-it/tree/second-stage)
 
 ### Как запустить проект? 
-0. Для начала, должен быть установлен [`python`⬀](https://www.python.org/downloads/) версии не ниже `3.4` и [` git`⬀](https://git-scm.com/downloads)
-0. После установки нужно склонировать проект в удобное для Вас место командой ```bash
+1. Для начала, должен быть установлен [`python`⬀](https://www.python.org/downloads/) версии не ниже `3.4` и [` git`⬀](https://git-scm.com/downloads)
+1. После установки нужно склонировать проект в удобное для Вас место командой ```bash
 git clone https://github.com/jag-k/1000listnick-it.git```
-0. Для запуска проекта используйте команду  ```bash
+1. Для запуска проекта используйте команду  ```bash
 python main.py```
 
 ### Настройки проекта
