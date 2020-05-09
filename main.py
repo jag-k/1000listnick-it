@@ -2,37 +2,38 @@ from os import system
 
 STEPS = [
     {
-        "answer": "1",
         "name": "Переключиться на первый этап",
-        "cmd":
         # language=Bash
-            "git checkout first-stage",
+        "cmd": "git checkout first-stage",
     },
     {
-        "answer": "2",
         "name": "Переключиться на второй этап",
-        "cmd":
         # language=Bash
-            "git checkout second-stage",
-    },
-    {
-        "answer": "0",
-        "name": "Выйти",
-        "cmd":
-        # language=Bash
-            "exit",
+        "cmd": "git checkout second-stage",
     }
 ]
 
+EXIT_COMMAND = {
+        "name": "Выйти",
+        # language=Bash
+        "cmd": "exit"
+    }
+
 answer = "-1"
-while answer not in map(lambda x: x["answer"], STEPS):
+while not (answer.isnumeric() and int(answer) in range(len(STEPS)+1)):
     print("Выберите команду:")
-    for n in STEPS:
-        print("%(answer)s: %(name)s" % n)
+    for i in range(len(STEPS)):
+        print("%s: %s" % (i+1, STEPS[i]['name']))
+
+    print("0: %s" % EXIT_COMMAND['name'])
     try:
         answer = input()
     except KeyboardInterrupt:
         answer = "0"
+        break
+
+
+STEPS.insert(0, EXIT_COMMAND)
 
 print("Выполняем действие...")
-system(list(filter(lambda x: x["answer"] == answer, STEPS))[0]["cmd"])
+system(STEPS[int(answer)]["cmd"])
