@@ -1,5 +1,5 @@
 # 1000-LIST-NICK (IT)
-Репозиторий для работ в 1000-LIST-NICK для направления IT
+🎉 Вы открыли первый этап! 🎉
 
  - [1 этап](https://github.com/jag-k/1000listnick-it/tree/first-stage)
  - [2 этап](https://github.com/jag-k/1000listnick-it/tree/second-stage)
