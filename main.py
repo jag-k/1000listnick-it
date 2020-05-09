@@ -6,14 +6,14 @@ STEPS = [
         "name": "Переключиться на первый этап",
         "cmd":
         # language=Bash
-            "git checkout first-step",
+            "git checkout first-stage",
     },
     {
         "answer": "2",
         "name": "Переключиться на второй этап",
         "cmd":
         # language=Bash
-            "git checkout second-step",
+            "git checkout second-stage",
     },
     {
         "answer": "0",
