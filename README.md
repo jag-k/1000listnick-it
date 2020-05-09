@@ -20,4 +20,4 @@ python main.py```
 - [👥 VK](https://vk.com/jag.konon)
 - [:octocat: GitHub](https://github.com/jag-k)
 - [🌐 Мой вебсайт (да, там ничего нет)](https://jagk.ru)
-- [jagk58@ya.ru](mailto:jagk58@ya.ru)
+- [📧 jagk58@ya.ru](mailto:jagk58@ya.ru)
