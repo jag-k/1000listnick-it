@@ -8,8 +8,8 @@
 1. Для начала, должен быть установлен [`python`⬀](https://www.python.org/downloads/) версии не ниже `3.4` и [`git`⬀](https://git-scm.com/downloads)
 1. После установки нужно склонировать проект в удобное для Вас место командой `git clone https://github.com/jag-k/1000listnick-it.git`
 1. Затем перейти в папку проекта `cd 1000listnick-it` и выбрать этап:
-    - 1 этап — `git checkout first-step`
-    - 2 этап — `git checkout second-step`
+    - 1 этап — `git checkout first-stage`
+    - 2 этап — `git checkout second-stage`
 1. Для запуска проекта используйте команду  `python main.py`
 
 ### Настройки проекта
