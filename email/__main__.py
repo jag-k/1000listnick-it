@@ -1,12 +1,12 @@
 #! /usr/bin/python3
 import argparse
-from email.db import *
+
+from email import *
 
 parser = argparse.ArgumentParser(
     description="Задание на реализацию очереди"
 )
 subparser = parser.add_subparsers(help="Возможные команды")
-
 
 # === ADD COMMAND ===
 
@@ -33,7 +33,6 @@ content_g.add_argument(
     help="Отправить HTML (требует путь к файлу)"
 )
 
-
 # === SEND COMMAND ===
 
 send_queue = subparser.add_parser("send", help="Отправить из очереди")
@@ -45,7 +44,6 @@ send_queue.add_argument(
     "-a", "--all", action="store_true", default=False,
     help="Отправить ВСЕ сообщения из очереди (игнорирует введённые адреса)"
 )
-
 
 # === CHECK COMMAND ===
 
@@ -62,7 +60,6 @@ check_queue.add_argument(
     "-c", "--count", action="store", type=int, default=-1,
     help="Количество сообщений, которые будут показаны (по умолчанию, все)"
 )
-
 
 argv = parser.parse_args()
 
@@ -83,16 +80,12 @@ def main():
         else:
             content = " ".join(argv.message)
 
-        with db_session:
-            n = Message(
-                email=argv.email,
-                title=' '.join(argv.title),
-                content=content,
-                as_html=as_html,
-            )
-            print(n)
-            commit()
-            Message.select().show()
+        add_to_queue(
+            email=argv.email,
+            title=' '.join(argv.title),
+            content=content,
+            as_html=as_html,
+        )
 
     elif "all" in argv:
         print("send")
