@@ -103,19 +103,34 @@ def thread(func: FunctionType = None, daemon: bool = False) -> Union[StoppableTh
     return w(func)
 
 
-@thread(daemon=True)
-def pol(*value, sep=" "):
-    """
-    Print On Line
+if argv.quiet:
+    @thread(daemon=True)
+    def pol(*value, sep=" "):
+        """
+        Print On Line
 
-    :param value: Some values
-    :type value: Any
-    :param sep: Separator
-    :type sep: str
-    :return: None
-    :rtype: None
-    """
-    return print('\r' + sep.join(map(str, value)), end='', flush=True)
+        :param value: Some values
+        :type value: Any
+        :param sep: Separator
+        :type sep: str
+        :return: None
+        :rtype: None
+        """
+        pass
+else:
+    @thread(daemon=True)
+    def pol(*value, sep=" "):
+        """
+        Print On Line
+
+        :param value: Some values
+        :type value: Any
+        :param sep: Separator
+        :type sep: str
+        :return: None
+        :rtype: None
+        """
+        return print('\r' + sep.join(map(str, value)), end='', flush=True)
 
 
 try:
@@ -207,8 +222,9 @@ def stop(*threads: StoppableThread):
 
 def main():
     root = os.path.abspath(argv.root)
-    print('Выполняется поиск по директории "%s"...' % root)
-    print('Для прерывания программы нажмите ⌃C\n')
+    if not argv.quiet:
+        print('Выполняется поиск по директории "%s"...' % root)
+        print('Для прерывания программы нажмите ⌃C\n')
     t1 = time()
     s = search(root)
     w = watcher(search_q)
@@ -232,7 +248,8 @@ def main():
     res = sorted(set(results))
 
     pol('Нашлось %d за %d сек.\n' % (len(res), int(t2 - t1)))
-    print(*res, sep="\n")
+    if not argv.quiet:
+        print(*res, sep="\n")
 
 
 if __name__ == '__main__':
