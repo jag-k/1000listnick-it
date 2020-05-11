@@ -19,12 +19,14 @@
 ## Настройки проекта
 Для получения справки добавьте флаг `-h` или `--help` во время запуска задания.
 Например: `python file_search.py --help`
-![Изображение справки](.github/help_page.png)
+
+<img align="left" width="49%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page.png"/>
+<img align="right" width="49%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page2.png"/>
 
 Ещё один пример запуска проекта: `python file_search.py .*\.py -o res.txt --regexp -r ./ -i venv .venv --ignore __pycache__` (ищет все `.py` файлы в текущей директории, игнорируя питоновские временные и "системные" файлы, а так же записывает результат в `res.txt` файл)
 
 #### Настройки подключения к базе данных для 2-го задания
-Файл для конфигурации: `database_config.json`
+Файл для конфигурации: `database_config.json`. Используется база данных [PostgreSQL](https://www.postgresql.org)
 
 Ключ     | Значение по умолчанию | Тип   | Описание
 -------- | --------------------- | ----- | ---------------------------
@@ -41,8 +43,8 @@ database | `"postgres"`          | `str` | Название самой базы 
 
 Библиотека                                    | Её предназначение
 --------------------------------------------- | -----------------
-[PonyORM](https://pypi.org/pony)              | Это ORM Для работы с базами данных
-[psycopg2cffi](https://pypi.org/psycopg2cffi) | Позволяет работать [PonyORM](https://ponyorm.org) с БД [Postgres](https://www.postgresql.org)
+[pony](https://pypi.org/pony)                 | [PonyORM](https://ponyorm.org) - Это [ORM](https://ru.wikipedia.org/wiki/ORM) Для работы с базами данных
+[psycopg2cffi](https://pypi.org/psycopg2cffi) | Позволяет работать [PonyORM](https://ponyorm.org) с БД [PostgreSQL](https://www.postgresql.org)
 
 ## Мои контакты
 Если будут вопросы по проекту, то вот как со мной связаться: 
