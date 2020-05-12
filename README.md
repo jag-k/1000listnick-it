@@ -24,15 +24,33 @@
 
 <img align="right" width="49%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page.png"/>
 
-Слева страницы помощи 2-го задания: `python email --help`, `python email --help`, `python email --help` и `python email --help`
+Слева страницы помощи 2-го задания: `python email --help`, `python email add --help`, `python email send --help` и `python email check --help`
 
 Справва страница помощи 1-го задания: `python file_search.py --help`
 
-Ещё один пример запуска проекта: 
+Пример запуска 1-го задания: 
 ```bash
 python file_search.py .*\.py -o res.txt --regexp -r ./ -i venv .venv --ignore __pycache__
 ```
-> ищет все `.py` файлы в текущей директории, игнорируя питоновские временные и "системные" файлы, а так же записывает результат в `res.txt` файл
+> Ищет все `.py` файлы в текущей директории, игнорируя питоновские временные и "системные" файлы, а так же записывает результат в `res.txt` файл
+
+
+Примеры запуска 2-го задания:
+```bash
+python email add me@jagk.ru --title Отчёт о поиске -f res.txt
+```
+> Добавляет в очередь сообщение для _me@jagk.ru_ с заголовком `Отчёт о поиске`. Телом сообщения являются данные из файла `res.txt`, в которых записан отчёт выполнения предыдущей команды запуска 1-го задания
+
+```bash
+python email check -s wait
+```
+> Показывает все сообщения в очереди
+ 
+```bash
+python email send -a
+```
+> Отправляет все сообщения из очереди
+
 
 #### Настройки подключения к базе данных для 2-го задания
 Файл для конфигурации: `database_config.json`.
