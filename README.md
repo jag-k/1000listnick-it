@@ -24,9 +24,10 @@
 
 <img align="right" width="49%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page.png"/>
 
+Справа страница помощи 1-го задания: `python file_search.py --help`
+
 Слева страницы помощи 2-го задания: `python email --help`, `python email add --help`, `python email send --help` и `python email check --help`
 
-Справва страница помощи 1-го задания: `python file_search.py --help`
 
 ## Примеры запуска заданий
 Пример запуска 1-го задания: 
