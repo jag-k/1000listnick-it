@@ -30,6 +30,7 @@
 
 Слева страницы помощи 2-го задания: `python email --help`, `python email add --help`, `python email send --help` и `python email check --help`
 
+<br><br><br>
 
 ## Примеры запуска заданий
 Пример запуска 1-го задания: 
