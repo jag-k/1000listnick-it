@@ -5,7 +5,7 @@
  - [2 этап](https://github.com/jag-k/1000listnick-it/tree/second-stage)
 
 
-### ⚠️ ВАЖНО Для работы программы необходимо установить зависимости! ⚠️  
+<h3 align="center"> ⚠️ ВАЖНО Для работы программы необходимо установить зависимости! ⚠️  </h3>
 
 ## Как запустить проект? 
 1. Для начала, должен быть установлен [`python`⬀](https://www.python.org/downloads/) версии не ниже `3.7` и [`git`⬀](https://git-scm.com/downloads)
@@ -20,8 +20,13 @@
 Для получения справки добавьте флаг `-h` или `--help` во время запуска задания.
 Например: `python file_search.py --help`
 
-<img align="left" width="49%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page.png"/>
-<img align="right" width="49%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page2.png"/>
+<img align="left" width="49%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page2.png"/>
+
+Это страницы помощи 2-го задания: `python email --help`, `python email --help`, `python email --help` и `python email --help`
+
+<img align="right" width="49%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page.png"/>
+
+А так выглядит страница помощи 1-го задания: `python file_search.py --help`
 
 Ещё один пример запуска проекта: `python file_search.py .*\.py -o res.txt --regexp -r ./ -i venv .venv --ignore __pycache__` (ищет все `.py` файлы в текущей директории, игнорируя питоновские временные и "системные" файлы, а так же записывает результат в `res.txt` файл)
 
