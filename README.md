@@ -28,6 +28,7 @@
 
 Справва страница помощи 1-го задания: `python file_search.py --help`
 
+## Примеры запуска заданий
 Пример запуска 1-го задания: 
 ```bash
 python file_search.py .*\.py -o res.txt --regexp -r ./ -i venv .venv --ignore __pycache__
