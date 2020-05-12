@@ -5,7 +5,7 @@
  - [2 этап](https://github.com/jag-k/1000listnick-it/tree/second-stage)
 
 
-<h3 align="center"> ⚠️ ВАЖНО Для работы программы необходимо установить зависимости! ⚠️  </h3>
+<h3 align="center"> ⚠️ ВАЖНО Для работы программы необходимо установить зависимости! Как это сделать написано ниже! ⚠️  </h3>
 
 ## Как запустить проект? 
 1. Для начала, должен быть установлен [`python`⬀](https://www.python.org/downloads/) версии не ниже `3.7` и [`git`⬀](https://git-scm.com/downloads)
@@ -20,18 +20,23 @@
 Для получения справки добавьте флаг `-h` или `--help` во время запуска задания.
 Например: `python file_search.py --help`
 
-<img align="left" width="45%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page2.png"/>
+<img align="left" width="46%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page2.png"/>
 
-<img align="right" width="45%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page.png"/>
+<img align="right" width="49%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page.png"/>
 
 Слева страницы помощи 2-го задания: `python email --help`, `python email --help`, `python email --help` и `python email --help`
 
 Справва страница помощи 1-го задания: `python file_search.py --help`
 
-Ещё один пример запуска проекта: `python file_search.py .*\.py -o res.txt --regexp -r ./ -i venv .venv --ignore __pycache__` (ищет все `.py` файлы в текущей директории, игнорируя питоновские временные и "системные" файлы, а так же записывает результат в `res.txt` файл)
+Ещё один пример запуска проекта: 
+```bash
+python file_search.py .*\.py -o res.txt --regexp -r ./ -i venv .venv --ignore __pycache__
+```
+> ищет все `.py` файлы в текущей директории, игнорируя питоновские временные и "системные" файлы, а так же записывает результат в `res.txt` файл
 
 #### Настройки подключения к базе данных для 2-го задания
-Файл для конфигурации: `database_config.json`. Используется база данных [PostgreSQL](https://www.postgresql.org)
+Файл для конфигурации: `database_config.json`.
+Используется база данных [PostgreSQL](https://www.postgresql.org)
 
 Ключ     | Значение по умолчанию | Тип   | Описание
 -------- | --------------------- | ----- | ---------------------------
@@ -44,7 +49,7 @@ database | `"postgres"`          | `str` | Название самой базы 
 
 ## Какие зависимости есть, и зачем они нужны?
 Все эти зависимости относятся к 2-му заданию `./email/`
-(То есть `file_search.py` можно использовать и без установки этих зависимостей)
+> То есть `file_search.py` можно использовать и без установки этих зависимостей
 
 Библиотека                                    | Её предназначение
 --------------------------------------------- | -----------------
