@@ -20,9 +20,9 @@
 Для получения справки добавьте флаг `-h` или `--help` во время запуска задания.
 Например: `python file_search.py --help`
 
-<img align="left" width="40%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page2.png"/>
+<img align="left" width="45%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page2.png"/>
 
-<img align="right" width="40%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page.png"/>
+<img align="right" width="45%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page.png"/>
 
 Слева страницы помощи 2-го задания: `python email --help`, `python email --help`, `python email --help` и `python email --help`
 
