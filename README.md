@@ -20,20 +20,13 @@
 Для получения справки добавьте флаг `-h` или `--help` во время запуска задания.
 Например: `python file_search.py --help`
 
-<div>
 <img align="left" width="49%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page2.png"/>
 
-Это страницы помощи 2-го задания: `python email --help`, `python email --help`, `python email --help` и `python email --help`
-
-</div>
-
-<div>
- 
 <img align="right" width="49%" src="https://github.com/jag-k/1000listnick-it/raw/first-stage/.github/help_page.png"/>
 
-А так выглядит страница помощи 1-го задания: `python file_search.py --help`
+Слева страницы помощи 2-го задания: `python email --help`, `python email --help`, `python email --help` и `python email --help`
 
-</div>
+Справва страница помощи 1-го задания: `python file_search.py --help`
 
 Ещё один пример запуска проекта: `python file_search.py .*\.py -o res.txt --regexp -r ./ -i venv .venv --ignore __pycache__` (ищет все `.py` файлы в текущей директории, игнорируя питоновские временные и "системные" файлы, а так же записывает результат в `res.txt` файл)
 
