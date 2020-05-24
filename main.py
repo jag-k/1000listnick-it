@@ -3,17 +3,18 @@ from sanic.request import Request
 from sanic.response import json
 
 from extensions import *
-from db import *
+# from db import *
 
 app = Sanic(__name__)
 
-app.blueprint(calendar)
+app.blueprint(calendar, url_prefix="/calendar")
 
 
 @app.route('/')
 def main_r(req: Request):
-    with db_session:
-        return json(URL.select().first().to_dict())
+    return json(
+        list(map(lambda route: route.uri, calendar.routes))
+    )
 
 
 if __name__ == '__main__':
