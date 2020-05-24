@@ -2,9 +2,12 @@ from sanic import Sanic
 from sanic.request import Request
 from sanic.response import json
 
+from extensions import *
 from db import *
 
 app = Sanic(__name__)
+
+app.blueprint(calendar)
 
 
 @app.route('/')
