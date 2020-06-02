@@ -1,4 +1,4 @@
-# 1000-LIST-NICK (IT)
+# 1000-LIST-NICK (IT) ![](https://img.shields.io/website?down_color=lightgrey&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2F1000ln-it.jagk.ru)
 🎉 Вы открыли второй этап! 🎉
 
 [📄 Ссылка на само задание ⬀](https://docs.google.com/document/d/1gkIVum4qibqqsTDvmeISJv3RSmhoE5IPVwsQuP96ru0)
@@ -25,8 +25,8 @@ Demo: [1000ln-it.jagk.ru](https://1000ln-it.jagk.ru/)
 
 ## Что ещё использовалось для данного проекта?
 
-"Технология" | Описание
------------- | --------
+Библиотека | Описание
+---------- | --------
 [CodyHose Framework](https://codyhouse.co) | Фреймворк [CodyHose](https://codyhouse.co) использовался для написание Front-end части проекта
 
 
