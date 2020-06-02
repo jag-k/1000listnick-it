@@ -2,7 +2,7 @@ import os
 
 from sanic import Sanic
 from sanic.request import Request
-from sanic.response import json
+from sanic.response import json, text
 
 from db import *
 
@@ -12,7 +12,7 @@ app = Sanic(__name__)
 @app.route('/')
 def main_r(req: Request):
     with db_session:
-        return json(URL.select().first().to_dict())
+        return text(URL.select().to_json(), content_type="application/json")
 
 
 if __name__ == '__main__':
