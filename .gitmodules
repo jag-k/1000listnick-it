@@ -1,3 +1,0 @@
-[submodule "extensions/calendar"]
-	path = extensions/calendar
-	url = https://github.com/jag-k/calendar.git

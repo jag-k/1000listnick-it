@@ -1,8 +1,5 @@
 {
-  "provider": "mysql",
-  "host": "database-1.cfbscj59bod1.us-east-1.rds.amazonaws.com",
-  "port": "3306",
-  "user": "admin",
-  "passwd": "1000listnick",
-  "db": "database-1"
+  "provider": "sqlite",
+  "filename": "db.sqlite3",
+  "create_db": true
 }
