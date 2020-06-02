@@ -191,3 +191,4 @@ fabric.properties
 .idea/httpRequests
 .idea/caches/build_file_checksums.ser
 localhost.*
+.vercel
