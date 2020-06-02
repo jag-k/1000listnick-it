@@ -2,7 +2,7 @@
   "version": 2,
   "functions": {
     "api/main.py": {
-      "runtime": "now-python",
+      "runtime": "now-python@latest",
       "includeFiles": "db.sqlite3"
     }
   },
