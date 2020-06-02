@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "functions": {
-    "api/main.py": {
-      "runtime": "now-python@latest",
-      "includeFiles": "db.sqlite3"
+  "builds": [
+    {
+      "src": "*.py",
+      "use": "@now/python"
     }
-  },
+  ],
   "routes": [
     {
       "src": "(.*)",
-      "dest": "api/main.py"
+      "dest": "main.py"
     }
   ],
   "github": {
