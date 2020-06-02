@@ -1,8 +1,10 @@
 {
   "version": 2,
+  "cleanUrls": true,
+  "trailingSlash": false,
   "builds": [
     {
-      "src": "main.py",
+      "src": "*.py",
       "use": "@now/python"
     }
   ],
@@ -11,5 +13,8 @@
       "src": "(.*)",
       "dest": "main.py"
     }
-  ]
+  ],
+  "github": {
+    "silent": true
+  }
 }
