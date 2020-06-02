@@ -6,12 +6,6 @@
       "includeFiles": "db.sqlite3"
     }
   },
-  "builds": [
-    {
-      "src": "api/main.py",
-      "use": "@now/python"
-    }
-  ],
   "routes": [
     {
       "src": "(.*)",
