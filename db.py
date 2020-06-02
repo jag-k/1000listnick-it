@@ -1,11 +1,6 @@
 import os
 from json import load
-
 from pony.orm import *
-
-if not os.path.exists("db.sqlite3"):
-    with open("db.sqlite3", "w") as file_db:
-        file_db.write("")
 
 db = Database()
 db.bind(**load(open('database_settings.json')))
