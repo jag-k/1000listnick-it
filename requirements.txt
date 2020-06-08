@@ -2,3 +2,4 @@ pony~=0.7.13
 sanic==19.12.2
 Jinja2~=2.11.2
 jinja2_sanic
+pymysql
