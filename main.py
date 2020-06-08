@@ -3,6 +3,7 @@ from json import loads
 
 import jinja2_sanic
 import jinja2
+from sanic.exceptions import NotFound, SanicException
 
 from jinja2_sanic import render_template as temp, template
 
@@ -52,6 +53,19 @@ async def reg_user(req: Request):
         "users": ["user"]
     }
 
+
+@app.exception(NotFound)
+def handler(req: Request, exc: SanicException):
+    return json({
+        "message": {
+            "error": "Not found",
+            "path": req.url,
+            "status": 404
+        }
+    }, 404)
+
+
+app.static("/", "public")
 
 if __name__ == '__main__':
     ssl_conn = None

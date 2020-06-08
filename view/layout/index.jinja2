@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@13.0.1/dist/lazyload.min.js"></script>
+  <script>
+      var lazyLoadInstance = new LazyLoad ( {
+          elements_selector: "[loading='lazy']"
+      } );
+  </script>
+
+  <script>document.getElementsByTagName ( "html" )[0].className += " js";</script>
+  <link rel="stylesheet" href="/css/style.css">
+  <script>
+      if (!('CSS' in window && CSS.supports ( 'color', 'var(--color-var)' ))) {
+          document.write ( '<link rel="stylesheet" href="/css/style-fallback.css">' );
+      }
+  </script>
+  <noscript>
+    <link rel="stylesheet" href="/css/style-fallback.css">
+  </noscript>
+
+  <title>{% block titile %}{{ title + " | 📅 Расписание в календаре" if title is defined else "📅 Расписание в календаре" }}{% endblock %}</title>
+</head>
+<body data-theme="{{ theme }}">
+<script src="/js/dark-mode.js"></script>
+
+<header class="header js-header">
+  <div class="header__container container max-width-lg">
+    <div class="header__logo">
+      <a href="/" class="color-primary margin-y-sm no-effect">
+        <i class="fa fa-calendar"></i>📅 Расписание в календаре
+      </a>
+    </div>
+
+    <button class="btn btn--subtle header__trigger js-header__trigger" aria-label="Toggle menu"
+            aria-expanded="false" aria-controls="header-nav">
+      <i class="header__trigger-icon" aria-hidden="true"></i>
+      <span>Меню</span>
+    </button>
+
+  </div>
+</header>
+
+
+<div class="_content my-4 margin-bottom-lg">
+  {% include "layout/alert.jinja2" %}
+  {% block content %}
+  {% endblock %}
+  <a class="back-to-top js-back-to-top no-effect" href="#" data-offset="100" data-duration="300">
+    <svg class="icon" viewBox="0 0 16 16"><title>Наверх!</title><g stroke-width="1" stroke="currentColor"><polyline fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="15.5,11.5 8,4 0.5,11.5 "></polyline></g></svg>
+  </a>
+</div>
+
+<footer class="main-footer padding-y-lg bg-primary" data-theme="default">
+  <div class="container max-width-lg">
+    <div class="main-footer__content grid justify-between">
+
+      <div class="col-2 margin-left-auto">
+        <a href="/" class="no-effect">
+          <img src="/images/footer_icons/footer-logo.png" alt="1000LISTNICK" class="text-lg font-bold color-black">
+        </a>
+      </div>
+    </div>
+
+    <div class="main-footer__colophon" style="border-top: solid 1px black;">
+      <div class="main-footer__colophon-nav">
+        <span style="color :black;">&copy; 1000-list-nick</span>
+      </div>
+      <div>
+        {#% for s in socials:
+          <a href="{{s.link}}" title="{{s.name}}" class="no-effect" target="_blank">
+            <i class="fa fa-{{s.icon}}" style="color: black;"></i>
+          </a>
+        % end#}
+        <a class="icon dark-mode-switchers color-black"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+    initButtons();
+    lazyLoadInstance.update();
+</script>
+<script src="/js/scripts.js"></script>
+</body>
+</html>

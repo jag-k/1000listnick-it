@@ -1,10 +1,14 @@
 import hashlib
 import binascii
+import os
 
 from json import load
 from model import *
 
-db.bind(**load(open('database_settings.json')))
+if os.getenv("LOCAL", "False").lower() == "true":
+    db.bind(provider="sqlite", filename=":memory:")
+else:
+    db.bind(**load(open('database_settings.json')))
 db.generate_mapping(create_tables=True)
 
 

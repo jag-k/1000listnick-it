@@ -72,7 +72,8 @@
   },
   "scripts": {
     "gulp": "gulp",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp sass",
+    "watch": "gulp watch"
   },
   "version": "2.4.0"
 }
