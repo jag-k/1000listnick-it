@@ -1,18 +1,56 @@
 import os
+from json import loads
+
+import jinja2_sanic
+import jinja2
+
+from jinja2_sanic import render_template as temp, template
 
 from sanic import Sanic
 from sanic.request import Request
-from sanic.response import json, text
+from sanic.response import json, text, redirect, HTTPResponse
+from sanic.compat import Header
 
 from db import *
 
 app = Sanic(__name__)
 
+jinja2_sanic.setup(
+    app,
+    loader=jinja2.FileSystemLoader("./view"),
+    autoescape=jinja2.select_autoescape()
+)
+
 
 @app.route('/')
-def main_r(req: Request):
+async def main_r(req: Request):
     with db_session:
-        return text(URL.select().to_json(), content_type="application/json")
+        return json({
+            "headers": {**dict(req.headers), "sec-ch-ua": None},
+            "data": loads(User.select().to_json())
+        })
+
+
+def alert(message: str, _type: str = "warning"):
+    return {
+        "Set-Cookies": "alert=%s;alert_type=%s" % (message, _type)
+    }
+
+
+@app.route("/register")
+@template("register.jinja2")
+async def reg_user(req: Request):
+    print(req.method)
+    if req.method == "POST":
+        form = req.form
+
+        with db_session:
+            create_user(form.get("email"), form.get("password"))
+        return redirect("/", alert("User"))
+
+    return {
+        "users": ["user"]
+    }
 
 
 if __name__ == '__main__':
@@ -32,12 +70,8 @@ if __name__ == '__main__':
         port = 80
 
     app.run(
-        host="0.0.0.0",
+        host=os.getenv("HOST", "0.0.0.0"),
         port=port,
         auto_reload=True,
         ssl=ssl_conn,
     )
-
-
-# for i in range(200):
-#     print(i, "\033[%sm Hello_!\033[0m" % i)

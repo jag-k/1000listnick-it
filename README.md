@@ -32,7 +32,8 @@ Jinja2     | Template-Engine
 ## Что ещё использовалось для данного проекта?
 Библиотека | Описание
 ---------- | --------
-[CodyHose Framework](https://codyhouse.co) | Фреймворк [CodyHose](https://codyhouse.co) использовался для написание Front-end части проекта
+[![CHL](.github/codyhouse.svg)](https://codyhouse.co) | Фреймворк [CodyHose](https://codyhouse.co) использовался для написание Front-end части проекта
+[![Amazon RDS](https://www.percona.com/blog/wp-content/uploads/2018/07/aws_rds.png)](https://console.aws.amazon.com) | Сервис для использования баз данных
 
 
 ## Мои контакты

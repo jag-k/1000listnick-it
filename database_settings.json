@@ -1,4 +1,8 @@
 {
-  "provider": "sqlite",
-  "filename": ":memory:"
+  "provider": "mysql",
+  "host": "it1000ln.cfbscj59bod1.us-east-1.rds.amazonaws.com",
+  "port": 3306,
+  "user": "admin",
+  "passwd": "1000listnick",
+  "db": "it_1000ln"
 }

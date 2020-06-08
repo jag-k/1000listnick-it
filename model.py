@@ -42,7 +42,3 @@ class Lesson(db.Entity):
     description = Optional(str)
     location = Optional(str)
     days = Set(Day)
-
-
-
-db.generate_mapping()
