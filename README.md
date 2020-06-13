@@ -3,7 +3,7 @@
 
 [📄 Ссылка на само задание ⬀](https://docs.google.com/document/d/1gkIVum4qibqqsTDvmeISJv3RSmhoE5IPVwsQuP96ru0)
 
-Demo: [1000ln-it.jagk.ru](https://1000ln-it.jagk.ru/) ![Website](https://img.shields.io/website?down_message=offline&label=%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81&up_message=online&url=https%3A%2F%2F1000ln-it.jagk.ru)
+Demo: [1000ln-it.jagk.ru ![Website](https://img.shields.io/website?down_message=offline&label=%D1%81%D1%82%D0%B0%D1%82%D1%83%D1%81&up_message=online&url=https%3A%2F%2F1000ln-it.jagk.ru)](https://1000ln-it.jagk.ru/)
  - [1 этап ⬀](https://github.com/jag-k/1000listnick-it/tree/first-stage)
  - [2 этап ⬀](https://github.com/jag-k/1000listnick-it/tree/second-stage)
 
