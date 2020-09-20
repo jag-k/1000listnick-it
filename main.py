@@ -41,7 +41,6 @@ def alert(message: str, _type: str = "warning"):
 @app.route("/register")
 @template("register.jinja2")
 async def reg_user(req: Request):
-    print(req.method)
     if req.method == "POST":
         form = req.form
 
@@ -50,7 +49,8 @@ async def reg_user(req: Request):
         return redirect("/", alert("User"))
 
     return {
-        "users": ["user"]
+        "users": ["user"],
+        "dir": dir
     }
 
 

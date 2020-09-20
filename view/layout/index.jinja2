@@ -1,7 +1,19 @@
 <!DOCTYPE HTML>
+{% macro icon(icon_class, fa_type="fa") -%}
+  {%- set src = {
+    "": "/regular.svg",
+    "b": "/brands.svg",
+    "s": "/solid.svg",
+  }.get(fa_type.lstrip('fa')) -%}
+  {%- set icon_id = icon_class.lstrip("fa-") -%}
+  <svg height="17px" width="10px"><use xlink:href="{{ src }}#{{ icon_id }}"></use></svg>
+{%- endmacro %}
+{% macro brand(icon_class) %}{{ icon(icon_class, "b") }}{% endmacro %}
+{% macro solid(icon_class) %}{{ icon(icon_class, "s") }}{% endmacro %}
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@13.0.1/dist/lazyload.min.js"></script>
   <script>
@@ -39,42 +51,108 @@
       <i class="header__trigger-icon" aria-hidden="true"></i>
       <span>Меню</span>
     </button>
-
+    <nav class="header__nav js-header__nav" id="header-nav" role="navigation" aria-label="Main">
+      <div class="header__nav-inner">
+        <div class="header__label">Меню</div>
+        <ul class="header__list">
+          <li class="header__item"><a href="/about" class="header__link">О проекте</a></li>
+          <li class="header__item"><a href="#0" class="header__link">Solutions</a></li>
+          <li class="header__item"><a href="#0" class="header__link" aria-current="page">Resources</a></li>
+          <li class="header__item"><a href="#0" class="header__link">Pricing</a></li>
+          <li class="header__item"><a href="#0" class="header__link">Contact</a></li>
+          <li class="header__item header__item--divider" aria-hidden="true"></li>
+          <li class="header__item"><a href="#0" class="reset text-decoration-none color-contrast-low">Войти</a></li>
+          <li class="header__item"><a href="#0" class="btn btn--primary">Регистрация</a></li>
+        </ul>
+      </div>
+    </nav>
   </div>
 </header>
 
 
 <div class="_content my-4 margin-bottom-lg">
   {% include "layout/alert.jinja2" %}
-  {% block content %}
-  {% endblock %}
+  <div class="margin-x-auto max-width-adaptive">
+    {% block content %}{% endblock %}
+  </div>
   <a class="back-to-top js-back-to-top no-effect" href="#" data-offset="100" data-duration="300">
-    <svg class="icon" viewBox="0 0 16 16"><title>Наверх!</title><g stroke-width="1" stroke="currentColor"><polyline fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="15.5,11.5 8,4 0.5,11.5 "></polyline></g></svg>
+    <svg class="icon" viewBox="0 0 16 16" width="16px" height="16px"><title>Наверх!</title><g stroke-width="1" stroke="currentColor"><polyline fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="15.5,11.5 8,4 0.5,11.5 "></polyline></g></svg>
   </a>
 </div>
-
-<footer class="main-footer padding-y-lg bg-primary" data-theme="default">
+<footer class="main-footer padding-y-lg">
   <div class="container max-width-lg">
-    <div class="main-footer__content grid justify-between">
-
-      <div class="col-2 margin-left-auto">
-        <a href="/" class="no-effect">
-          <img src="/images/footer_icons/footer-logo.png" alt="1000LISTNICK" class="text-lg font-bold color-black">
+    <div class="grid gap-lg">
+      <div class="col-3@lg order-2@lg flex@lg justify-end@lg">
+        <a href="/" class="main-footer__logo">
+          <svg width="104" height="30" viewBox="0 0 104 30"><title>Go to homepage</title><path d="M37.54 24.08V3.72h4.92v16.37h8.47v4zM60.47 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8 8 0 015.64-2.18 8.07 8.07 0 015.68 2.2 8.49 8.49 0 012 5.69 8.63 8.63 0 01-1.78 5.38 7.6 7.6 0 01-5.89 2.49zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.79 3-2.79 4.26.32 4.23 2.82 4.23zM95.49 24.37a7.82 7.82 0 01-5.73-2.25 8.36 8.36 0 01-2-5.62 8.32 8.32 0 012.08-5.71 8.4 8.4 0 0111.31 0 8.43 8.43 0 012 5.69 8.6 8.6 0 01-1.77 5.38 7.6 7.6 0 01-5.89 2.51zm0-3.67c2.42 0 2.73-3 2.73-4.23s-.31-4.26-2.73-4.26-2.8 3-2.8 4.26.31 4.23 2.83 4.23zM77.66 30c-5.74 0-7-3.25-7.23-4.52l4.6-.26c.41.91 1.17 1.41 2.76 1.41a2.45 2.45 0 002.82-2.53v-2.68a7 7 0 01-1.7 1.75 6.12 6.12 0 01-5.85-.08c-2.41-1.37-3-4.25-3-6.66 0-.89.12-3.67 1.45-5.42a5.67 5.67 0 014.64-2.4c1.2 0 3 .25 4.46 2.82V8.81h4.85v15.33a5.2 5.2 0 01-2.12 4.32A9.92 9.92 0 0177.66 30zm.15-9.66c2.53 0 2.81-2.69 2.81-3.91s-.31-4-2.81-4-2.81 2.8-2.81 4 .27 3.91 2.81 3.91zM55.56 3.72h9.81v2.41h-9.81z" fill="var(--color-contrast-higher)"/><circle cx="15" cy="15" r="15" fill="var(--color-primary)"/></svg>
         </a>
       </div>
+
+      <nav class="col-9@lg order-1@lg">
+        <ul class="grid gap-lg">
+          <li class="col-6@sm col-3@md">
+            <h4 class="main-footer__legend">Product</h4>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Pricing</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Teams</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Updates</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Features</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Integrations</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Support</a></div>
+          </li>
+
+          <li class="col-6@sm col-3@md">
+            <h4 class="main-footer__legend">Developers</h4>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Documentation</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">API reference</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">API status</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Open source</a></div>
+          </li>
+
+          <li class="col-6@sm col-3@md">
+            <h4 class="main-footer__legend">Resources</h4>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Tutorials</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Docs</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Community</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Case studies</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Help center</a></div>
+          </li>
+
+          <li class="col-6@sm col-3@md">
+            <h4 class="main-footer__legend">About</h4>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Company</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Customers</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Careers</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Education</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Our story</a></div>
+            <div class="main-footer__item"><a href="#0" class="main-footer__link">Press kit</a></div>
+          </li>
+        </ul>
+      </nav>
     </div>
 
-    <div class="main-footer__colophon" style="border-top: solid 1px black;">
-      <div class="main-footer__colophon-nav">
-        <span style="color :black;">&copy; 1000-list-nick</span>
+    <div class="main-footer__colophon border-top padding-top-xs margin-top-lg">
+      <div class="text-sm text-xs@md color-contrast-medium flex gap-xs">
+        <span>&copy; myWebsite</span>
+        <a href="#0" class="color-contrast-high">Terms</a>
+        <a href="#0" class="color-contrast-high">Privacy</a>
       </div>
-      <div>
-        {#% for s in socials:
-          <a href="{{s.link}}" title="{{s.name}}" class="no-effect" target="_blank">
-            <i class="fa fa-{{s.icon}}" style="color: black;"></i>
-          </a>
-        % end#}
-        <a class="icon dark-mode-switchers color-black"></a>
+
+      <div class="flex items-center flex-gap-xs">
+        <a href="https://twitter.com/jag_k_" class="main-footer__social">
+          {{ brand("twitter") }}
+        </a>
+
+        <a href="https://instagram.com/jag_k_" class="main-footer__social">
+          {{ brand("instagram") }}
+        </a>
+
+        <a href="https://vk.com/jag_konon" class="main-footer__social">
+          {{ brand("vk") }}
+        </a>
+
+        <a href="https://github.com/jag-k" class="main-footer__social">
+          {{ brand("github") }}
+        </a>
       </div>
     </div>
   </div>

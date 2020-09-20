@@ -1,4 +1,43 @@
 {% extends "layout/index.jinja2" %}
 {% block content %}
-  {{ users }}
+  <form class="sign-up-form">
+    <div class="text-component text-center margin-bottom-sm">
+      <h1>Добро пожаловать!</h1>
+      <p>Уже есть аккаунт? <a href="/login">Войти</a></p>
+    </div>
+
+
+    <div class="margin-bottom-sm">
+      <div class="grid grid-gap-xs">
+        <div class="col-6@md">
+          <label class="form-label margin-bottom-xxxs" for="inputFirstName">Имя</label>
+          <input class="form-control width-100%" type="text" name="inputFirstName" id="inputFirstName"
+                 placeholder="Иван">
+        </div>
+
+        <div class="col-6@md">
+          <label class="form-label margin-bottom-xxxs" for="inputLastName">Фамилия</label>
+          <input class="form-control width-100%" type="text" name="inputLastName" id="inputLastName"
+                 placeholder="Иванович">
+        </div>
+      </div>
+    </div>
+
+    <div class="margin-bottom-sm">
+      <label class="form-label margin-bottom-xxxs" for="inputEmail1">Email</label>
+      <input class="form-control width-100%" type="email" name="inputEmail1" id="inputEmail1"
+             placeholder="email@myemail.com">
+    </div>
+
+    <div class="margin-bottom-md">
+      <label class="form-label margin-bottom-xxxs" for="inputPassword1">Пароль</label>
+      <input class="form-control width-100%" type="password" name="inputPassword1" id="inputPassword1" minlength="6"
+             placeholder="••••••">
+      <p class="text-xs color-contrast-medium margin-top-xxs">Минимум 6 символов</p>
+    </div>
+
+    <div class="margin-bottom-sm">
+      <button class="btn btn--primary btn--md width-100%">Присоединится</button>
+    </div>
+  </form>
 {% endblock %}
